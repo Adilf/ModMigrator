@@ -7,7 +7,9 @@ game.on_save(function()
     --mod's own code
     --...
     --migration
-    remote.call("ModMigrator","Nat_Ev_En",{ArtifactCollectors=global.ArtifactCollectors})
+    remote.call("ModMigrator","make_chapter","Nat_Ev_En")--begin transition process for one of new modules (enemies)
+    remote.call("ModMigrator","store","Nat_Ev_En",{ArtifactCollectors=global.ArtifactCollectors})--pack values 
+    --transitions for other modules may take place below    
 end)
 --NewMod
 game.on_load(function()
@@ -15,7 +17,7 @@ game.on_load(function()
     --...
     --migration
     if remote.interfaces.ModMigrator and not global.updated then
-        temp=remote.call("ModMigrator","Nat_Ev_En")
+        temp=remote.call("ModMigrator","fetch","Nat_Ev_En")
         if temp and temp.ArtifactCollectors then
             global.ArtifactCollectors= temp.ArtifactCollectors
             global.next_check=game.tick+interval
