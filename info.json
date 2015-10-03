@@ -1,0 +1,10 @@
+{
+  "name": "ModMigrator",
+  "version": "0.1.0",
+  "title": "Mod Migrator",
+  "author": "Adil",
+  "contact": "",
+  "homepage": "",
+  "description": "Should be used to provide custom migration of data between mods.",
+  "dependencies": ["base >= 0.12.0"]
+}
