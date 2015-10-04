@@ -37,6 +37,6 @@ game.on_load(function()
             end
         end
         game.show_message_dialog{text="Migration from Natural Evolution to Natural Evolution Modular is complete"..
-        "\nIf everything is working correct, you may now disable ModMigrator."}
+        "\nIf everything is working correct, you may now disable ModMigrator and overwrite the savegame if you wish."}
     end
 end)
